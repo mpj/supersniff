@@ -1,0 +1,16 @@
+{
+  "name": "supersniff",
+  "version": "1.0.0",
+  "description": "A simple function for debugging stuff like promise chains and other pipeline-like thingees. It just creates a function that console logs whatever is passed to it and then returns that value.",
+  "main": "supersniff.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpj/supersniff.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mpj/supersniff/issues"
+  },
+  "homepage": "https://github.com/mpj/supersniff#readme"
+}
