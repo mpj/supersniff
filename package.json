@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/mpj/supersniff/issues"
   },
-  "homepage": "https://github.com/mpj/supersniff#readme"
+  "homepage": "https://github.com/mpj/supersniff#readme",
+  "engines" : {
+    "node" : ">=8"
+  }
 }
