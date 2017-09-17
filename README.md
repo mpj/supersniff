@@ -1,6 +1,6 @@
 # supersniff
 
-A simple function for debugging stuff like promise chains and other pipeline-like thingees. It just creates a function that console logs whatever is passed to it and then returns that value
+A simple function for debugging stuff like promise chains, streams and other pipeline-like thingees. It just creates a function that console logs whatever is passed to it and then returns that value
 
 Example:
 ```javascript
