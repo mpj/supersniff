@@ -1,6 +1,7 @@
 const util = require('util')
 const fs = require('fs')
 const writeFile = util.promisify(require('fs').writeFile)
+const readFile = util.promisify(require('fs').readFile)
 
 const fn = (tagName, val) => {
   console.log(`[${tagName}]`, val)
@@ -8,10 +9,11 @@ const fn = (tagName, val) => {
 }
 const api = fn.bind(null, 'SNIFF')
 api.tag = tagName => fn.bind(null, tagName)
-api.file = filename => val =>
+api.save = filename => val =>
   writeFile(filename, JSON.stringify(val, null, 2)).then(() => {
     console.log(`supersniff wrote to ${filename}`)
     return val
   })
+api.load = filename => readFile(filename).then(data => JSON.parse(data))
 
 module.exports = api
