@@ -45,7 +45,40 @@ supersnitt will log to console with a [SNIFF] prefix but if you want to override
 ```javascript
 const sniff = require('supersniff')
 
-fetch(`http://myapi.com/users/${username}.json`))
+fetch(`http://myapi.com/users/${username}.json`)
   .then(response => response.json())
   .then(sniff.tag('MYTAG'))
+```
+
+# Sniffing to file
+```javascript
+const sniff = require('supersniff')
+
+fetch(`http://myapi.com/users/${username}.json`)
+  .then(response => response.json())
+  .then(sniff.save('apioutput.json'))
+```
+
+# Loading file contents conviniently
+```javascript
+const sniff = require('supersniff')
+/*
+fetch(`http://slowexpensivethrottledapi.com/users/${username}.json`)
+  .then(response => response.json())
+  .then(sniff.save('apioutput.json'))*/
+
+sniff.load('apioutput.json')
+  .then(data => data.friends[0].fullName)
+  .then(sniff)
+```
+
+# Memoizing expensive calls to file
+
+```javascript
+const sniff = require('supersniff')
+sniff.memo('apioutput.json', () =>
+  fetch(`http://slowexpensivethrottledapi.com/users/${username}.json`)
+    .then(response => response.json()))
+.then(data => data.friends[0].fullName)
+.then(sniff)
 ```
