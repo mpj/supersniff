@@ -3,6 +3,7 @@ const fs = require('fs')
 const writeFile = util.promisify(require('fs').writeFile)
 const readFile = util.promisify(require('fs').readFile)
 
+
 const fn = (tagName, val) => {
   console.log(`[${tagName}]`, val)
   return val
@@ -15,5 +16,9 @@ api.save = filename => val =>
     return val
   })
 api.load = filename => readFile(filename).then(data => JSON.parse(data))
+api.memo = (filename, fn) =>
+  fs.existsSync(filename)
+    ? api.load(filename)
+    : fn().then(api.save(filename))
 
 module.exports = api
