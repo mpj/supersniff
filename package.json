@@ -1,6 +1,6 @@
 {
   "name": "supersniff",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "A simple function for debugging stuff like promise chains and other pipeline-like thingees. It just creates a function that console logs whatever is passed to it and then returns that value.",
   "main": "supersniff.js",
   "repository": {
