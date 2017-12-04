@@ -1,6 +1,6 @@
 # supersniff
 
-A simple function for debugging stuff like promise chains, streams and other pipeline-like thingees. It just creates a function that console logs whatever is passed to it and then returns that value
+A simple function for debugging stuff like promise chains, streams and other pipeline-like thingies. It just creates a function that console logs whatever is passed to it and then returns that value.
 
 Example:
 ```javascript
@@ -39,8 +39,8 @@ getData()
 ```
 Yes, this is stupidly simple, but I've found myself writing this function 40000 times now so I want it on npm, OK? OK!?????
 
-# Overrriding prefix
-supersnitt will log to console with a [SNIFF] prefix but if you want to override it like this:
+# Overriding prefix
+supersniff will log to console with a [SNIFF] prefix but if you want to, you can override it like this:
 
 ```javascript
 const sniff = require('supersniff')
