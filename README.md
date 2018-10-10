@@ -73,7 +73,7 @@ sniff.load('apioutput.json')
 ```
 
 # Memoizing expensive calls to file
-
+(Aka cache the results, then use those instead of making the call each time)
 ```javascript
 const sniff = require('supersniff')
 sniff.memo('apioutput.json', () =>
